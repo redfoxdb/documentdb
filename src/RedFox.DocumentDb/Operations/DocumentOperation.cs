@@ -3,6 +3,6 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-namespace RedFox.DocumentDb.EventSourcing.Operations;
+namespace RedFox.DocumentDb.Operations;
 
-public abstract class DatabaseOperation { }
+public class DocumentOperation : DatabaseOperation { }

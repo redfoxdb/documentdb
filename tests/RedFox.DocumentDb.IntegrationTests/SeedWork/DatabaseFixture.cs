@@ -11,7 +11,7 @@ using Aspire.Hosting.ApplicationModel;
 using Microsoft.Extensions.Hosting;
 using Npgsql;
 
-namespace RedFox.DocumentDb.EventSourcing.IntegrationTests.SeedWork;
+namespace RedFox.DocumentDb.IntegrationTests.SeedWork;
 
 public class DatabaseFixture : IAsyncLifetime
 {
@@ -26,7 +26,7 @@ public class DatabaseFixture : IAsyncLifetime
         IDistributedApplicationBuilder appBuilder = DistributedApplication.CreateBuilder(
             new DistributedApplicationOptions
             {
-                AssemblyName = typeof(RedFox.DocumentDb.EventSourcing.ISession).Assembly.FullName,
+                AssemblyName = typeof(RedFox.DocumentDb.IDocumentSession).Assembly.FullName,
                 DisableDashboard = true,
             }
         );

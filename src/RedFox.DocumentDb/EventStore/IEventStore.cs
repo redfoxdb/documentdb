@@ -3,23 +3,22 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-namespace RedFox.DocumentDb.EventSourcing;
+using RedFox.DocumentDb.EventStore;
 
-public interface ISession
+// ReSharper disable once CheckNamespace
+namespace RedFox.DocumentDb;
+
+public interface IEventStore
 {
-    Task StartStreamAsync(
+    Task AppendEventAsync<TEvent>(
         string streamId,
-        object[] events,
+        TEvent @event,
+        CancellationToken cancellationToken = default
+    )
+        where TEvent : class;
+
+    Task<IEnumerable<IEvent>> ReadStreamAsync(
+        string streamId,
         CancellationToken cancellationToken = default
     );
-
-    Task AppendAsync(
-        string streamId,
-        object[] events,
-        CancellationToken cancellationToken = default
-    );
-
-    Task StoreAsync(object document, CancellationToken cancellationToken = default);
-
-    Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }

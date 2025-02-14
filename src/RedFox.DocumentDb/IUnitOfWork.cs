@@ -3,9 +3,9 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-namespace RedFox.DocumentDb.EventSourcing.Configuration;
+namespace RedFox.DocumentDb;
 
-public class DocumentDbEventStoreOptions
+public interface IUnitOfWork
 {
-    public string? ConnectionString { get; set; }
+    Task SaveChangesAsync(CancellationToken cancellationToken = default);
 }

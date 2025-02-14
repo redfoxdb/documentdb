@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>RedFox.DocumentDb.EventSourcing</PackageId>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net462;net472;net481;net6.0;net8.0;net9.0</TargetFrameworks>
+    <PackageId>RedFox.DocumentDb.DependencyInjection</PackageId>
+    <TargetFrameworks>netstandard2.0;net8.0;net9.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IsTrimmable>true</IsTrimmable>
     <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
@@ -31,8 +31,19 @@
       System.Runtime.CompilerServices.SkipLocalsInitAttribute;
     </PolySharpIncludeGeneratedTypes>
   </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <!-- NOTE: Lowest reasonable, backward compatible version, it must also be compatible with Npgsql in the parent package -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" VersionOverride="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+    <!-- NOTE: Lowest reasonable, backward compatible version, it must also be compatible with Npgsql in the parent package -->
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" VersionOverride="3.1.0" />
+  </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+    <ProjectReference Include="..\RedFox.DocumentDb\RedFox.DocumentDb.csproj" />
   </ItemGroup>
 
 </Project>

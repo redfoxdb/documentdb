@@ -3,9 +3,10 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-using RedFox.DocumentDb.EventSourcing.Configuration;
+using RedFox.DocumentDb.Configuration;
 
-namespace RedFox.DocumentDb.EventSourcing;
+// ReSharper disable once CheckNamespace
+namespace RedFox.DocumentDb;
 
 public static class ServiceCollectionExtensions
 {

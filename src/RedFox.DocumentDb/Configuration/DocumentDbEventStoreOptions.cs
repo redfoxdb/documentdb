@@ -3,9 +3,13 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-using RedFox.DocumentDb.EventSourcing.IntegrationTests.SeedWork;
+namespace RedFox.DocumentDb.Configuration;
 
-namespace RedFox.DocumentDb.EventSourcing.IntegrationTests;
+public class DocumentDbEventStoreOptions
+{
+    public string? ConnectionString { get; set; }
 
-[Collection("Aspire Collection")]
-public sealed class SessionTests(DatabaseFixture fixture) { }
+    public string? EventsPartitionKey { get; set; }
+
+    public string? StreamsPartitionKey { get; set; }
+}

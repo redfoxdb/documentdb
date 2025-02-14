@@ -3,11 +3,10 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-using RedFox.DocumentDb.EventSourcing.Operations;
+// ReSharper disable once CheckNamespace
+namespace RedFox.DocumentDb;
 
-namespace RedFox.DocumentDb.EventSourcing;
-
-public interface IProjection
-{
-    public Task ApplyAsync(ISession session, DatabaseOperation[] operations);
-}
+/// <summary>
+/// Details of Patch operation that is to be applied to the referred Cosmos item.
+/// </summary>
+public class PatchOperation { }

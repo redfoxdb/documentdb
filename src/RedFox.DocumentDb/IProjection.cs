@@ -3,7 +3,11 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-global using System;
-global using System.Threading;
-global using System.Threading.Tasks;
-global using Microsoft.Extensions.DependencyInjection;
+using RedFox.DocumentDb.Operations;
+
+namespace RedFox.DocumentDb;
+
+public interface IProjection
+{
+    public Task ApplyAsync(IDocumentSession documentSession, DatabaseOperation[] operations);
+}

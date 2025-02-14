@@ -3,9 +3,9 @@
 // Copyright (C) RedFox and Open-Source Contributors.
 // All Rights Reserved.
 
-using RedFox.DocumentDb.EventSourcing.IntegrationTests.SeedWork;
+using RedFox.DocumentDb.IntegrationTests.SeedWork;
 
-namespace RedFox.DocumentDb.EventSourcing.IntegrationTests;
+namespace RedFox.DocumentDb.IntegrationTests;
 
 // NOTE: https://xunit.net/docs/shared-context
 [CollectionDefinition("Aspire Collection")]

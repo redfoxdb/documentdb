@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\RedFox.DocumentDb.EventSourcing\RedFox.DocumentDb.EventSourcing.csproj" />
+    <ProjectReference Include="..\..\src\RedFox.DocumentDb\RedFox.DocumentDb.csproj" />
   </ItemGroup>
 
   <ItemGroup>
